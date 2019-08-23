@@ -12,19 +12,21 @@ module.exports = {
         filename: 'js/[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
+    devServer: {
+        contentBase: path.join(__dirname, 'dist'),
+        compress: true,
+        port: 9000,
+    },
+    devtool: "source-map",
     module: {
         rules: [
             {
                 test: /\.js$/,
                 include: [
-                    path.resolve(__dirname, "src/js")
+                    path.resolve(__dirname, "src/js"),
                 ],
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
+                exclude: /node_modules/,
+                loader: 'babel-loader',
             },
             {
               test: /\.scss$/i,
