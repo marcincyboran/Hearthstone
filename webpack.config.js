@@ -29,42 +29,42 @@ module.exports = {
                 loader: 'babel-loader',
             },
             {
-              test: /\.scss$/i,
-              include: [
-                path.resolve(__dirname, "src/sass")
-              ],
-              use: [
+                test: /\.scss$/i,
+                include: [
+                    path.resolve(__dirname, "src/sass")
+                ],
+                use: [
                 {
-                  loader: MiniCssExtractPlugin.loader,
-                  options: {
-                    publicPath: '../'
-                  },
+                    loader: MiniCssExtractPlugin.loader,
+                    options: {
+                        publicPath: '../'
+                    },
                 },
                 'css-loader',
                 'resolve-url-loader',
                 {
-                  loader: 'sass-loader',
-                  options: {
-                    sourceMap: true,
-                    sourceMapContents: false
-                  }
+                    loader: 'sass-loader',
+                    options: {
+                        sourceMap: true,
+                        sourceMapContents: false
+                    }
                 }
               ],
             },
             {
-              test: /\.(png|svg|jpg|gif)$/,
-              include: [
-                  path.resolve(__dirname, "src/assets")
-              ],
-              use: [
-                  {
-                  loader: 'file-loader',
-                  options: {
-                      name: '[name].[ext]',
-                      outputPath: 'assets',
-                    },
-                  }
-              ]
+                test: /\.(png|svg|jpg|gif)$/,
+                include: [
+                    path.resolve(__dirname, "src/assets")
+                ],
+                use: [
+                    {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'assets',
+                        },
+                    }
+                ]
           },
         ]
     },
