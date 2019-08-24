@@ -1,0 +1,18 @@
+.container {
+    max-width: 144rem;
+    padding: 0 var(--padding);
+    @include centerBlock;
+}
+
+.main-container {
+    display: flex;
+
+    // Test
+    min-height: 100rem;
+
+    margin-bottom: 10rem;
+
+    & > *:not(:last-child) {
+        margin-right: var(--margin);
+    }
+}

@@ -1,8 +1,22 @@
 :root {
+    --color-primary: #eee;
+    --color-secondary: #eee;
+    --color-tertiary: #eee;
 
+    --color-text: #eee;
+    --color-text-2: #eee;
+
+    --padding: 1.5rem;
+
+    --margin: 3rem;
+    --margin-small: 1rem;
+    --margin-big: 5rem;
+
+    --box-shadow-color: rgba(0, 0, 0, 0.6);
 }
 
 // Wyjasnie o co chodzi na zoomie - Marcin
+// Wartości dla media queries:
 // 75em;        1200/16
 // 70em;        1120/16
 // 68.75em;     1100/16

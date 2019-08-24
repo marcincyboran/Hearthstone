@@ -1,0 +1,32 @@
+body {
+    background: url(./../../assets/bg3.jpg) no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+.main-list {
+    flex: 0 1 20%;
+    background-color: #727A8C;
+}
+
+.content {
+    flex: 1;
+    background-image:
+        url(./../../assets/parchment_right_top_corner.png),
+        url(./../../assets/parchment_bottom.png),
+        url(./../../assets/parchment_top.png),
+        url(./../../assets/parchment.jpg);
+    background-position: right top, center calc(100% + 10px), center top, top left;
+    background-repeat: no-repeat, no-repeat, no-repeat, repeat-y;
+    background-size: 5rem, contain, contain, contain;
+    box-shadow: 
+        inset 7px 0 14px -7px var(--box-shadow-color),
+        inset -7px 0 14px -7px var(--box-shadow-color);
+
+
+}
+
+.card-wrapper {
+    flex: 0 1 25%;
+    background: url(./../../assets/bg2.jpg);
+}

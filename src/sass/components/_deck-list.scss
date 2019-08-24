@@ -1,0 +1,24 @@
+.deck {
+    position: fixed;
+    top: 10rem;
+    right: 5rem;
+
+    display: block;
+    padding: 1rem;
+    background-color: #eee;
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+        display: block;
+        padding: 1rem 3rem;
+        background-color: orange;
+        font-size: 2rem;
+
+        &:not(:last-child) {
+            margin-bottom: var(--margin-small)
+        }
+    }
+}
