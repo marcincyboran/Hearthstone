@@ -1,1 +1,1 @@
-import img1 from './../assets/404.jpg';
+import './../assets/bg1.jpg';
