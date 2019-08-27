@@ -10,8 +10,9 @@ class MainCtrl {
         // Case 1:
         // Ktoś klika w menu i wybiera: pokaż wszystkie karty
         // robimy więc: 
-        //      const allCardsCtrl = new AllCardsCtr()
+        //      let allCardsCtrl = new AllCardsCtr()
         //      allCardsCtrl.init()
+            
 
         // Case 2:
         // Ktoś wypełnia gdzieś forma klika szukaj

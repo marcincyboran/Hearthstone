@@ -7,13 +7,12 @@ import BaseView from './views/view';
 new MainCtrl(BaseView).init();
 
 // TYLKO DO TESTÓW
-
 import AllCardsModel from './models/allCardsModel';
 
-// const test = new AllCardsModel();
-const test = new AllCardsModel({
-    health: 5
-});
+const test = new AllCardsModel();
+// const test = new AllCardsModel({
+//     health: 5
+// });
 
 test.getCards();
 

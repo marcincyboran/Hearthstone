@@ -14,10 +14,10 @@ class CardView extends View {
         /* 
             Tutaj wywołamy jakieś funkcje w kolejności np:
             this.renderWrapper();
+            this.renderCards();
             this.renderCard();
             this.renderButtons();
         */ 
-
     )
 }
 

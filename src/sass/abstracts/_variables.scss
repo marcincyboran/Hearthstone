@@ -1,10 +1,13 @@
 :root {
+    --color-white: #fff;
+    --color-black: #000;
+
     --color-primary: #eee;
     --color-secondary: #eee;
     --color-tertiary: #eee;
 
-    --color-text: #eee;
-    --color-text-2: #eee;
+    --color-gray-1: #f6f6f6;
+    --color-gray-2: #eee;
 
     --padding: 1.5rem;
 
@@ -13,6 +16,7 @@
     --margin-big: 5rem;
 
     --box-shadow-color: rgba(0, 0, 0, 0.6);
+    --box-shadow--small: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 // Wyjasnie o co chodzi na zoomie - Marcin
