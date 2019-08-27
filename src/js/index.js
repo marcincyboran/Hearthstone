@@ -1,19 +1,20 @@
 import style from './../sass/main.scss';
 import './files';
 
-console.log('TESTUJEMY CZY DZIAŁA WEBPACK');
+import MainCtrl from './controllers/main';
+import BaseView from './views/view';
 
-fetch("https://omgvamp-hearthstone-v1.p.rapidapi.com/info", {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "omgvamp-hearthstone-v1.p.rapidapi.com",
-		"x-rapidapi-key": "49dea57d2emshbe7ef5e6d5deb1bp1b808ajsn4d6f70b73f91"
-	}
-})
-.then(response => response.json())
-.then(data => {
-    console.log(data)
-})
-.catch(err => {
-	console.log(err);
+new MainCtrl(BaseView).init();
+
+// TYLKO DO TESTÓW
+
+import AllCardsModel from './models/allCardsModel';
+
+// const test = new AllCardsModel();
+const test = new AllCardsModel({
+    health: 5
 });
+
+test.getCards();
+
+console.log('Testowy console.log');

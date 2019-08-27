@@ -18,7 +18,8 @@
         font-size: 2rem;
 
         &:not(:last-child) {
-            margin-bottom: var(--margin-small)
+            margin-bottom: var(--margin-small);
         }
     }
 }
+
