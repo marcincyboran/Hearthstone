@@ -41,8 +41,10 @@
 
     &__nav-link {
         padding: 1rem 2rem;
-        font-size: 1.8rem;
-        font-weight: 300;
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: var(--color-gray-4);
         text-decoration: none;
         transition: color .2s;
         cursor: pointer;
