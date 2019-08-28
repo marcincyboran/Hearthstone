@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap&subset=latin-ext" rel="stylesheet">
     <title>Hearthstone Card App</title>
 </head>
 <body>
 
-    <main class="container">
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">Hearthstone</div>
+            <nav class="header__nav">
+                <li class="header__nav-item">
+                    <a class="header__nav-link">
+                        Info
+                    </a>
+                </li>
+                <li class="header__nav-item">
+                    <a class="header__nav-link">
+                        Cards
+                    </a>
+                </li>
+                <li class="header__nav-item">
+                    <a class="header__nav-link">
+                        Single Card
+                    </a>
+                </li>
+            </nav>
+            <form class="header__form">
+                <input type="text" class="header__form-input">
+                <input type="submit" class="header__form-submit" value="Search">
+            </form>
+        </div>
+    </header>
 
-        <header class="header">
-            <img src="./assets/logo.png" alt="Hearthstone">
-        </header>
+    <section class="container mt-fixed">
 
         <section class="filters">
     
@@ -30,7 +54,7 @@
 
         </main>
 
-    </main>
+    </section>
  
     <aside class="deck">
         <ul class="deck__list">
@@ -41,6 +65,10 @@
             <li class="deck__item red mb">Deck 5</li>
         </ul>
     </aside>
+
+    <footer class="footer">
+
+    </footer>
 
 </body>
 </html>

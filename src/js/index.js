@@ -36,5 +36,3 @@ test.getCards();
 testQualityModel.getCards();
 testTypeModel.getCards();
 testSingleCardModel.getCards();
-
-console.log('Testowy console.log');

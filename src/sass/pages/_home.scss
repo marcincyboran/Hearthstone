@@ -1,25 +1,19 @@
-body {
-    background-color: var(--color-gray-1);
-}
-
-
-.filters,
-.content,
-.card-wrapper {
-    background-color: var(--color-white);
-    box-shadow: var(--box-shadow--small);
-}
-
 .filters {
     flex: 1;
     min-height: 20rem;
     margin-bottom: var(--margin);
+    @include basicSection;
+
 }
 
 .content {
     flex: 1;
+    @include basicSection;
+
 }
 
 .card-wrapper {
     flex: 0 1 30%;
+    @include basicSection;
+
 }
