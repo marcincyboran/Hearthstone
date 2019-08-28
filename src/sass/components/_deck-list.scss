@@ -1,11 +1,13 @@
 .deck {
     position: fixed;
     top: 10rem;
-    right: 5rem;
+    right: 3rem;
 
     display: block;
-    padding: 1rem;
-    background-color: #eee;
+    padding: var(--padding-small);
+
+    @include basicSection;
+
 
     &__list {
         list-style: none;
@@ -13,12 +15,19 @@
 
     &__item {
         display: block;
-        padding: 1rem 3rem;
-        background-color: orange;
-        font-size: 2rem;
+        padding: var(--padding-small) var(--padding-big);
+        font-size: 1.6rem;
+        transition: background-color .3s;
+        cursor: pointer;
+        
+        @include baseBorder;
 
         &:not(:last-child) {
             margin-bottom: var(--margin-small);
+        }
+
+        &:hover {
+            background-color: var(--color-gray-1);
         }
     }
 }
