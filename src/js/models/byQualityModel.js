@@ -1,6 +1,6 @@
 import Model from './model';
 
-class byQualityModel extends Model {
+class ByQualityModel extends Model {
     constructor(quality, optionsObj) {
         super(optionsObj);
         this.endpoint = `cards/qualities/${quality}`;
@@ -26,4 +26,4 @@ class byQualityModel extends Model {
     }
 }
 
-export default byQualityModel;
+export default ByQualityModel;

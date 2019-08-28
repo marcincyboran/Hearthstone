@@ -1,6 +1,6 @@
 import Model from './model';
 
-class singleCardModel extends Model {
+class SingleCardModel extends Model {
     constructor(name, optionsObj) {
         super(optionsObj);
         this.endpoint = `cards/${name}`;
@@ -26,4 +26,4 @@ class singleCardModel extends Model {
     }
 }
 
-export default singleCardModel;
+export default SingleCardModel;
