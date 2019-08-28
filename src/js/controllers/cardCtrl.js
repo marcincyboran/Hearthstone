@@ -1,27 +1,29 @@
-
+import CardView from '../views/cardView';
+import CardModel from '../models/allCardsModel';
 
 class CardCtrl {
-    constructor(model, view) {
-        this.model = model;
-        this.view = view;
+    constructor() {
+        this.model = new CardModel();
+        this.view = new CardView();
     }
 
-    setListeners() {
-        // Szukamy we view.elStr, ponieważ zapiszemy tam wszystkie klasy css powiązane z widokiem 
-        const wrapper = document.querySelector(`${this.view.elStr.wrapper}`)
+    handleClick(hash) {
+        switch(hash) {
+            case('#info'):
 
-        // Eventy zaleznie od potrzeb, tutaj tylko przykładowy,
-        // postarajmy się to robić przy pomocy delegacji zdarzeń - sprawdzając target
+            break;
+            case('#cards'):
 
-        wrapper.addEventListener('click', (event) => {
+            break;
+            case('#card'):
 
-            // Zaleznie od event.target jakaś logika, można skorzystać ze switcha
-
-        })
+            break;
+        }
     }
 
     init() {
-        
         this.setListeners();
     }
 }
+
+export default CardCtrl;

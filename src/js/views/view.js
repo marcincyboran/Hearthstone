@@ -1,9 +1,15 @@
 class View {
     constructor(){
         this.el = {
+            headerNav: document.querySelector('.header__nav'),
+            headerForm: document.querySelector('.header__form'),
+
             mainList: document.querySelector('.main-list'),
             content: document.querySelector('.content'),
             cardWrapper: document.querySelector('.card-wrapper')
+        }
+        this.elStr = {
+            
         }
     }
 

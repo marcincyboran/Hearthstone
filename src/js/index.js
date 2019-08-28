@@ -4,7 +4,7 @@ import './files';
 import MainCtrl from './controllers/main';
 import BaseView from './views/view';
 
-new MainCtrl(BaseView).init();
+new MainCtrl(new BaseView()).init();
 
 // TYLKO DO TESTÓW
 import AllCardsModel from './models/allCardsModel';
@@ -33,6 +33,6 @@ const testTypeModel = new byTypeModel('Weapon');
 const testSingleCardModel = new singleCardModel('Ysera');
 
 test.getCards();
-testQualityModel.getCards();
-testTypeModel.getCards();
-testSingleCardModel.getCards();
+// testQualityModel.getCards();
+// testTypeModel.getCards();
+// testSingleCardModel.getCards();

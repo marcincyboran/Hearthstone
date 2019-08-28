@@ -4,13 +4,16 @@
     @include centerBlock;
 }
 
+.wrapper {
+    margin-top: calc((var(--margin) * 2) + var(--header-height));
+    margin-bottom: calc((var(--margin) * 2) + var(--header-height));
+}
+
 .main-container {
     display: flex;
 
     // Test
     min-height: 100rem;
-
-    margin-bottom: 10rem;
 
     & > *:not(:last-child) {
         margin-right: var(--margin);

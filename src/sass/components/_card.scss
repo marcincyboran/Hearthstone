@@ -1,0 +1,16 @@
+.card {
+    padding: var(--padding-small);
+    max-width: 15rem;
+    display: inline-block;
+    margin: 2rem;
+    @include baseBorder;
+
+    &__title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+    }
+}
