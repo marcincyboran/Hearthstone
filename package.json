@@ -1,7 +1,6 @@
 {
   "name": "projectcc",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -28,5 +27,14 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-dev-server": "^3.8.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcincyboran/Hearthstone.git"
+  },
+  "bugs": {
+    "url": "https://github.com/marcincyboran/Hearthstone/issues"
+  },
+  "homepage": "https://github.com/marcincyboran/Hearthstone#readme",
+  "description": ""
 }
