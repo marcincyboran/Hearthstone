@@ -13,6 +13,10 @@ class View {
         }
     }
 
+    render(DOMElement, markup) {
+        DOMElement.insertAdjacentHTML('afterbegin', markup);
+    }
+
     renderLoader(parent) {
         const markup = `
             <div>
