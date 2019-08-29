@@ -1,5 +1,6 @@
 import MenuCtrl from './menuCtrl';
 import CardListCtrl from './cardListCtrl';
+import SingleCardCtrl from './singleCardCtrl';
 
 class MainCtrl {
     constructor(view) {
@@ -26,12 +27,27 @@ class MainCtrl {
         )
     }
 
-    menuFormSearchHandler(ev) {
+    async menuFormSearchHandler(ev) {
         ev.preventDefault();
-
         // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
         // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
         console.log(this);
+
+        // Przechwycenie wartosci z inputa
+        const cardName = ev.target[0].value;
+
+        this.singleCardCtrl = new SingleCardCtrl(cardName);
+
+        const cards = await this.singleCardCtrl.model.getCards();
+        
+        if (cards.error === 404) {
+            window.alert(`Card "${cardName}" not found!`)
+        } else {
+            this.singleCardCtrl.view.render(
+                this.view.el.content,
+                this.singleCardCtrl.view.getCardsMarkup(cards)
+        );}
+       
         this.menuCtrl.clearForm();
     }
 

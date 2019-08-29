@@ -12,9 +12,6 @@ class SingleCardModel extends Model {
                 'headers': {...this.headers}
             });
             const data = await rawData.json();
-
-            console.log('Single Card Model data:')
-            console.log(data)
             
             // Można tu ewentualnie zrobić map() na data i zwrócic w innej formie
 

@@ -14,6 +14,7 @@ class View {
     }
 
     render(DOMElement, markup) {
+        DOMElement.innerHTML = '' // Czyści element przed wyswietleniem kart z kolejnego wyszukiwania
         DOMElement.insertAdjacentHTML('afterbegin', markup);
     }
 
