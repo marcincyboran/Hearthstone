@@ -6,47 +6,56 @@ class MainCtrl {
     constructor(view) {
         this.view = view
         this.menuCtrl = new MenuCtrl(view);
-        this.cardListCtrl = new CardListCtrl(view);
+        this.cardListCtrl = new CardListCtrl();
     }
 
-    async menuNavClickHandler(ev) {
-        ev.preventDefault();
+    async getCards() {
 
-        // Póki co nie sprawdzamy co zostało kliknięte, ale zrobimy to :)
-        console.log(ev.target.hash);
-        
-        // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
-        // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
-        console.log(this);
-        
+        this.view.renderLoader(this.view.el.content);
+
         const cards = await this.cardListCtrl.model.getCards();
 
-        this.cardListCtrl.view.render(
+        this.view.render(
             this.view.el.content,
             this.cardListCtrl.view.getCardsMarkup(cards.splice(0, 30))
         )
     }
 
+    async menuNavClickHandler(ev) {
+        ev.preventDefault();
+        
+        // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
+        // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
+        console.log(this);
+    }
+
     async menuFormSearchHandler(ev) {
         ev.preventDefault();
+
         // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
         // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
         console.log(this);
 
         // Przechwycenie wartosci z inputa
         const cardName = ev.target[0].value;
-
+        
         this.singleCardCtrl = new SingleCardCtrl(cardName);
 
-        const cards = await this.singleCardCtrl.model.getCards();
+        this.view.renderLoader(this.view.el.cardWrapper);
+
+        const card = await this.singleCardCtrl.model.getCard();
         
-        if (cards.error === 404) {
-            window.alert(`Card "${cardName}" not found!`)
+        if (card.error === 404) {
+            this.view.render(
+                this.view.el.cardWrapper,
+                `<p class="card__title">${card.message}</p>`
+            );
         } else {
-            this.singleCardCtrl.view.render(
-                this.view.el.content,
-                this.singleCardCtrl.view.getCardsMarkup(cards)
-        );}
+            this.view.render(
+                this.view.el.cardWrapper,
+                this.singleCardCtrl.view.getCardsMarkup(card)
+            );
+        }
        
         this.menuCtrl.clearForm();
     }
@@ -57,6 +66,8 @@ class MainCtrl {
             this.menuNavClickHandler.bind(this),
             this.menuFormSearchHandler.bind(this)
         );
+
+        this.getCards();
     }
 }
 

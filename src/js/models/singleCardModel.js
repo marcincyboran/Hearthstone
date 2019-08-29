@@ -6,14 +6,12 @@ class SingleCardModel extends Model {
         this.endpoint = `cards/${name}`;
     }
 
-    async getCards() {
+    async getCard() {
         try {
             const rawData = await fetch(this.getFullUrl(), {
                 'headers': {...this.headers}
             });
             const data = await rawData.json();
-            
-            // Można tu ewentualnie zrobić map() na data i zwrócic w innej formie
 
             return data;
             

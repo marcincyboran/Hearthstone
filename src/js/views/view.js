@@ -7,35 +7,36 @@ class View {
             mainList: document.querySelector('.main-list'),
             content: document.querySelector('.content'),
             cardWrapper: document.querySelector('.card-wrapper')
-        }
+        };
         this.elStr = {
             
-        }
+        };
     }
 
     render(DOMElement, markup) {
-        DOMElement.innerHTML = '' // Czyści element przed wyswietleniem kart z kolejnego wyszukiwania
+        this._clearElementContent(DOMElement);
         DOMElement.insertAdjacentHTML('afterbegin', markup);
     }
 
     renderLoader(parent) {
+        this._clearElementContent(parent);
         const markup = `
-            <div>
-                // TUTAJ BĘDZIE HTML LOADERA
+            <div class="lds-default">
+                <div></div><div></div><div></div><div></div>
+                <div></div><div></div><div></div><div></div>
+                <div></div><div></div><div></div><div></div>
             </div>
-        `
+        `;
         parent.insertAdjacentHTML('afterbegin', markup);
     }
 
-    clearElementContent(element) {
+    _clearElementContent(element) {
         let el;
-
         if (typeof element === 'string') {
             el = document.querySelector(`${element}`)
         } else {
             el = element;
         }
-
         el.innerHTML = '';
     };
 }

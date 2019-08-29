@@ -1,18 +1,25 @@
 .filters {
+    position: relative;
     flex: 1;
     min-height: 20rem;
     margin-bottom: var(--margin);
-    @include basicSection;
 
+    @include basicSection;
 }
 
 .content {
+    position: relative;    
     flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: flex-start;
     @include basicSection;
 }
 
 .card-wrapper {
+    position: relative;
     flex: 0 1 30%;
+    
     @include basicSection;
-
 }

@@ -1,9 +1,14 @@
 .card {
     padding: var(--padding-small);
-    max-width: 15rem;
-    display: inline-block;
-    margin: 2rem;
+    flex: 0 1 23%;
+    margin: 1%;
+    transition: background-color .3s;
     @include baseBorder;
+
+    &:hover {
+        background-color: var(--color-gray-1);
+        cursor: pointer;
+    }
 
     &__title {
         font-size: 1.4rem;
