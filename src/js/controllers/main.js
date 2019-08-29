@@ -1,38 +1,46 @@
-import CardCtrl from './cardCtrl';
+import MenuCtrl from './menuCtrl';
+import CardListCtrl from './cardListCtrl';
 
 class MainCtrl {
     constructor(view) {
         this.view = view
+        this.menuCtrl = new MenuCtrl(view);
+        this.cardListCtrl = new CardListCtrl(view);
     }
 
-    renderAllCards() {
+    async menuNavClickHandler(ev) {
+        ev.preventDefault();
 
+        // Póki co nie sprawdzamy co zostało kliknięte, ale zrobimy to :)
+        console.log(ev.target.hash);
+        
+        // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
+        // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
+        console.log(this);
+        
+        const cards = await this.cardListCtrl.model.getCards();
+
+        this.cardListCtrl.view.render(
+            this.view.el.content,
+            this.cardListCtrl.view.getCardsMarkup(cards.splice(0, 30))
+        )
     }
 
-    setListeners() {
-        this.view.el.headerNav.addEventListener('click', (ev) => {
-            ev.preventDefault();
-            console.log(ev.target.hash);
-        });
+    menuFormSearchHandler(ev) {
+        ev.preventDefault();
 
-        this.view.el.headerForm.addEventListener('submit', (ev) => {
-            ev.preventDefault();
-            const input = ev.target.querySelector('input[type="text"]');
-
-            console.dir(input.value);
-            input.value = '';
-        });
-
-        // Case 2:
-        // Ktoś wypełnia gdzieś forma klika szukaj
-        // robimy więc: 
-        //      const findCardCtrl = new FindCardCtrl('WYSZUKIWANA KARTA')
-        //      findCardCtrl.init()
+        // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
+        // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
+        console.log(this);
+        this.menuCtrl.clearForm();
     }
 
     init() {
-        console.log('MainCtrl init function.')
-        this.setListeners();
+        console.log('Main init.');
+        this.menuCtrl.init(
+            this.menuNavClickHandler.bind(this),
+            this.menuFormSearchHandler.bind(this)
+        );
     }
 }
 

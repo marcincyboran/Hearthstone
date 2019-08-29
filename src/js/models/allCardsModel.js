@@ -6,19 +6,23 @@ class AllCardsModel extends Model {
         this.endpoint = 'cards';
     }
 
+    cardsObjectToSingleArray(obj) {
+        const allCards = [];
+        for (let property in obj) {
+            allCards.push(...obj[property])
+        }
+        return allCards;
+    }
+
     async getCards() {
         try {
             const rawData = await fetch(this.getFullUrl(), {
                 'headers': {...this.headers}
             });
-            const data = await rawData.json();
-
-            console.log('Model data:')
-            console.log(data)
+            const dataObj = await rawData.json();
+            const allCards = this.cardsObjectToSingleArray(dataObj);
             
-            // Można tu ewentualnie zrobić map() na data i zwrócic w innej formie
-
-            return data;
+            return allCards;
             
         } catch (error) {
             return new Error(`Wild ERROR occured, can't get cards list. Details: ${error}`)

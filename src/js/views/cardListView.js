@@ -5,16 +5,12 @@ class CardView extends View {
         super();
     }
 
-    render(DOMElement, markup) {
-        DOMElement.insertAdjacentHTML('afterbegin', markup);
-    }
-
-    getCardsMarkup(cards) {
+    getCardsMarkup(cardsArr) {
         let output = '';
-        cards.forEach(card => {
-            output =+ this.getCardMarkup(card);
+        cardsArr.forEach(cardObj => {
+            output += this.getCardMarkup(cardObj);
         });
-        return output
+        return output;
     }
 
     getCardMarkup(cardObj) {
