@@ -3,7 +3,7 @@ import Model from './model';
 class SingleCardModel extends Model {
     constructor(name, optionsObj) {
         super(optionsObj);
-        this.endpoint = `cards/${name}`;
+        this.endpoint = `cards/search/${name}`;
     }
 
     async getCard() {
