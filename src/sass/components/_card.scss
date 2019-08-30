@@ -3,6 +3,8 @@
     flex: 0 1 23%;
     margin: 1%;
     transition: background-color .3s;
+    overflow: hidden;
+
     @include baseBorder;
 
     &:hover {
@@ -20,6 +22,8 @@
     }
 
     &__image {
-        width: 100%;
+        margin-top: -3rem;
+        margin-bottom: 1rem;
+        max-width: 100%;
     }
 }
