@@ -1,7 +1,6 @@
 .filters {
     position: relative;
     flex: 1;
-    min-height: 20rem;
     margin-bottom: var(--margin);
 
     @include basicSection;

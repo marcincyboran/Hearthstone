@@ -4,7 +4,6 @@
     left: 0;
     right: 0;
     height: var(--header-height);
-    margin-bottom: calc(var(--margin) * 3);
     z-index: 500;
 
     @include basicSection;

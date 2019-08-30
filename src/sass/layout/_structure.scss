@@ -5,15 +5,15 @@
 }
 
 .wrapper {
-    margin-top: calc((var(--margin) * 2) + var(--header-height));
-    margin-bottom: calc((var(--margin) * 2) + var(--header-height));
+    padding-top: calc((var(--margin) * 2) + var(--header-height));
+    padding-bottom: calc((var(--margin) * 2) + var(--header-height));
 }
 
 .main-container {
     display: flex;
 
     // Test
-    min-height: 50rem;
+    min-height: 50vh;
 
     & > *:not(:last-child) {
         margin-right: var(--margin);
