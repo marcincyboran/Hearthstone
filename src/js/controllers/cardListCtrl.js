@@ -7,8 +7,15 @@ class CardListCtrl {
         this.view = new CardListView();
     }
 
-    init() {
+    async loadAllCard() {
+        this.view.renderLoader(this.view.el.content);
+
+        const cards = await this.model.getCards();
         
+        this.view.render(
+            this.view.el.content,
+            this.view.getCardsMarkup(cards.splice(0, 200))
+        )
     }
 }
 

@@ -4,7 +4,7 @@ import './files';
 import MainCtrl from './controllers/main';
 import BaseView from './views/view';
 
-new MainCtrl(new BaseView()).init();
+new MainCtrl().init();
 
 // TYLKO DO TESTÓW
 // import AllCardsModel from './models/allCardsModel';
