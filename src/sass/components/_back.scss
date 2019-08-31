@@ -1,0 +1,35 @@
+.back {
+    padding: var(--padding-small);
+    flex: 0 1 23%;
+    margin: 1%;
+    transition: background-color .3s;
+    overflow: hidden;
+
+    @include baseBorder;
+
+    &:hover {
+        background-color: var(--color-gray-1);
+        cursor: pointer;
+    }
+
+    &__title {
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        font-size: 1.2rem;
+    }
+
+    &__images-wrapper {
+        margin-top: -3rem;
+        margin-bottom: 1rem;
+    }
+
+    &__image {
+        display: block;
+        max-width: 100%;
+    }
+
+
+}

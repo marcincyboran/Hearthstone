@@ -19,10 +19,11 @@ class AllCardsModel extends Model {
             const rawData = await fetch(this.getFullUrl(), {
                 'headers': {...this.headers}
             });
-            const dataObj = await rawData.json();
-            const allCards = this.cardsObjectToSingleArray(dataObj);
             
-            return allCards;
+            const dataObj = await rawData.json();
+            const cards = this.cardsObjectToSingleArray(dataObj);
+            
+            return cards;
             
         } catch (error) {
             return new Error(`Wild ERROR occured, can't get cards list. Details: ${error}`)
