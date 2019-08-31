@@ -1,5 +1,5 @@
 class View {
-    constructor(){
+    constructor() {
         this.el = {
             headerNav: document.querySelector('.header__nav'),
             headerForm: document.querySelector('.header__form'),
@@ -41,4 +41,4 @@ class View {
     };
 }
 
-export default View
+export default View;

@@ -1,7 +1,8 @@
+import BaseView from '../views/view';
 
 class MenuCtrl {
-    constructor(baseView) {
-        this.view = baseView;
+    constructor() {
+        this.view = new BaseView();
     }
 
     clearForm() {

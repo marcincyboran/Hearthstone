@@ -1,32 +1,33 @@
+import BaseView from '../views/view';
+
 import MenuCtrl from './menuCtrl';
 import CardListCtrl from './cardListCtrl';
 import SingleCardCtrl from './singleCardCtrl';
+import BackCtrl from './backsCtrl';
 
 class MainCtrl {
-    constructor(view) {
-        this.view = view
-        this.menuCtrl = new MenuCtrl(view);
+    constructor() {
+        this.view = new BaseView()
+        this.menuCtrl = new MenuCtrl();
         this.cardListCtrl = new CardListCtrl();
+        this.backCtrl = new BackCtrl();
     }
 
-    async getCards() {
-
-        this.view.renderLoader(this.view.el.content);
-
-        const cards = await this.cardListCtrl.model.getCards();
-
-        this.view.render(
-            this.view.el.content,
-            this.cardListCtrl.view.getCardsMarkup(cards.splice(0, 30))
-        )
-    }
-
-    async menuNavClickHandler(ev) {
+    menuNavClickHandler(ev) {
         ev.preventDefault();
         
-        // Dzięki zastosowaniu bind(this) przy przekazywaniu callbacka w init()
-        // this w tym miejscu wskazuje na MainCtrl, a nie na MenuCtrl, gdzie została wywołana, wiem dziwne
-        console.log(this);
+        switch(ev.target.hash) {
+
+            case('#backs') :
+                this.backCtrl.loadBacks();
+            break;
+
+            case('#info') :
+                console.log(ev.target.hash);
+                // Miejsce na kod Oli :)
+            break;
+        }
+
     }
 
     async menuFormSearchHandler(ev) {
@@ -67,7 +68,7 @@ class MainCtrl {
             this.menuFormSearchHandler.bind(this)
         );
 
-        this.getCards();
+        this.cardListCtrl.loadAllCard();
     }
 }
 
