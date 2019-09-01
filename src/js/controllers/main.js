@@ -4,7 +4,7 @@ import MenuCtrl from './menuCtrl';
 import CardListCtrl from './cardListCtrl';
 import SingleCardCtrl from './singleCardCtrl';
 import BackCtrl from './backsCtrl';
-// import FilterCtrl from './filterCtrl';
+import FilterCtrl from './filterCtrl';
 
 
 class MainCtrl {
@@ -13,7 +13,6 @@ class MainCtrl {
         this.menuCtrl = new MenuCtrl();
         this.cardListCtrl = new CardListCtrl();
         this.backCtrl = new BackCtrl();
-        // this.filterCtrl = new FilterCtrl();
     }
 
     menuNavClickHandler(ev) {
@@ -30,10 +29,9 @@ class MainCtrl {
                 // Miejsce na kod Oli :)
             break;
         }
-
     }
 
-    async menuFormSearchHandler(ev) {
+    menuFormSearchHandler(ev) {
         ev.preventDefault();
 
         const cardName = ev.target[0].value;
@@ -43,11 +41,19 @@ class MainCtrl {
         this.menuCtrl.clearForm();
     }
 
+    filterHandler(ev) {
+        ev.preventDefault();
+
+        this.filterCtrl = new FilterCtrl(ev.target);
+        this.filterCtrl.loadCards();
+    }
+
     init() {
         console.log('Main init.');
         this.menuCtrl.init(
             this.menuNavClickHandler.bind(this),
-            this.menuFormSearchHandler.bind(this)
+            this.menuFormSearchHandler.bind(this),
+            this.filterHandler.bind(this)
         );
 
         this.cardListCtrl.loadAllCard();
