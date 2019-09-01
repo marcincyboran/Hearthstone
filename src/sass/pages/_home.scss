@@ -13,12 +13,15 @@
     flex-wrap: wrap;
     padding: 1rem;
     justify-content: flex-start;
+    margin-right: var(--margin-medium);
+
     @include basicSection;
 }
 
 .card-wrapper {
     position: relative;
     flex: 0 1 30%;
-    
+    margin-left: var(--margin-medium);
+
     @include basicSection;
 }

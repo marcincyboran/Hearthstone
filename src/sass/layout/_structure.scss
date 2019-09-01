@@ -14,8 +14,9 @@
 
     // Test
     min-height: 50vh;
-
-    & > *:not(:last-child) {
-        margin-right: var(--margin);
-    }
+    margin-top: var(--margin-medium);
+    
+    // & > *:not(:last-child) {
+    //     margin-right: var(--margin);
+    // }
 }
