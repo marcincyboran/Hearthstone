@@ -17,10 +17,12 @@ class CardView extends View {
         return `
             <article class="card">
                 <figure class="card__images-wrapper">
-                    <img    
-                        class="card__image" 
-                        src="${ cardObj.img ? cardObj.img : "./../../assets/backupcard.png"}"
-                        alt="${ cardObj.name ? cardObj.name : cardObj.cardId }" >
+                    <object 
+                        class="card__image"
+                        data="${cardObj.img}"
+                        type="image/jpg">
+                        <img class="card__image" src="./../../assets/backupcard.png" />
+                    </object>
 
                     <img 
                         class="card__image-back" 
