@@ -39,6 +39,8 @@ class CardView extends View {
                 <p class="card__health">${ cardObj.health ? ("Health: " + cardObj.health) : 'Health: No info'}</p>
                 <p class="card__race">${ cardObj.race ? ("Race: " + cardObj.race) : 'Race: No info'}</p>
                 <p class="card__flavor">${ cardObj.flavor ? ("Flavor: " + cardObj.flavor) : 'Flavor: No info'}</p>
+                <p class="card__durability">${ cardObj.durability ? ("Durability: " + cardObj.durability) : 'Durability: No info'}</p>
+                <p class="card__class">${ cardObj.playerClass ? ("Class: " + cardObj.playerClass) : 'Class: No info'}</p>
             </article>
         `
     }

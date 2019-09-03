@@ -4,6 +4,8 @@ class View {
             headerNav: document.querySelector('.header__nav'),
             headerForm: document.querySelector('.header__form'),
 
+            filterForm: document.querySelector('.filters'),
+
             mainList: document.querySelector('.main-list'),
             content: document.querySelector('.content'),
             cardWrapper: document.querySelector('.card-wrapper')

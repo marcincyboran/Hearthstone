@@ -10,17 +10,18 @@ class MenuCtrl {
         input.value = '';
     }
 
-    setFormListener(callback) {
-        this.view.el.headerForm.addEventListener('submit', callback);
+    setFormListener(headerCallback, filterCallback) {
+        this.view.el.headerForm.addEventListener('submit', headerCallback);
+        this.view.el.filterForm.addEventListener('submit', filterCallback);
     }
 
     setMenuListener(callback) {
         this.view.el.headerNav.addEventListener('click', callback);
     }
 
-    init(navHandler, searchHandler) {
+    init(navHandler, searchHandler, filterHandler) {
         this.setMenuListener(navHandler);
-        this.setFormListener(searchHandler);
+        this.setFormListener(searchHandler, filterHandler);
     }
 }
 
