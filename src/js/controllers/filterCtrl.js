@@ -36,7 +36,7 @@ class FilterCtrl {
         } else {
 
             this.model = new AllCardsModel();
-            let cards = await this.model.getCards();
+            cards = await this.model.getCards();
 
             cards = this.class ? cards.filter(card => card.playerClass === this.class) : cards;
             cards = this.race ? cards.filter(card => card.race === this.race) : cards;
