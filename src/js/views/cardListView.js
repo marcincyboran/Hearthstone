@@ -15,7 +15,7 @@ class CardView extends View {
 
     getCardMarkup(cardObj) {
         return `
-            <article class="card" data=cardId="${ cardObj.cardId}">
+            <article class="card" data-cardId="${ cardObj.cardId}">
                 <figure class="card__images-wrapper">
                     <object 
                         class="card__image"
