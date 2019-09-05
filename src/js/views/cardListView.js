@@ -15,7 +15,7 @@ class CardView extends View {
 
     getCardMarkup(cardObj) {
         return `
-            <article class="card">
+            <article class="card" data=cardId="${ cardObj.cardId}">
                 <figure class="card__images-wrapper">
                     <object 
                         class="card__image"
@@ -29,7 +29,7 @@ class CardView extends View {
                         src="/../../assets/back.png"
                         alt="Default card reverse" >
                 </figure>
-                <h4 class="card__title">${ cardObj.name ? cardObj.name : cardObj.cardId }</h4>
+                <h4 class="card__title" >${ cardObj.name ? cardObj.name : cardObj.cardId }</h4>
                 <p class="card__description">${ cardObj.text ? cardObj.text : 'No text' }</p>
                 <p class="card__rarity">${ cardObj.rarity ? ("Rarity: " + cardObj.rarity) : 'Rarity: No info'}</p>
                 <p class="card__cardSet">${ cardObj.cardSet ? ("Card Set: " + cardObj.cardSet) : 'Card Set: No info'}</p>
