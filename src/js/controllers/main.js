@@ -5,7 +5,7 @@ import CardListCtrl from './cardListCtrl';
 import SingleCardCtrl from './singleCardCtrl';
 import BackCtrl from './backsCtrl';
 import FilterCtrl from './filterCtrl';
-
+import ContentCtrl from './contentCtrl';
 
 class MainCtrl {
     constructor() {
@@ -13,6 +13,7 @@ class MainCtrl {
         this.menuCtrl = new MenuCtrl();
         this.cardListCtrl = new CardListCtrl();
         this.backCtrl = new BackCtrl();
+        this.contentCtrl = new ContentCtrl();
     }
 
     menuNavClickHandler(ev) {
@@ -48,6 +49,7 @@ class MainCtrl {
         this.filterCtrl.loadCards();
     }
 
+
     init() {
         console.log('Main init.');
         this.menuCtrl.init(
@@ -57,6 +59,9 @@ class MainCtrl {
         );
 
         this.cardListCtrl.loadAllCard();
+
+        this.ContentCtrl.setCardListener(loadCard());
+
     }
 }
 
