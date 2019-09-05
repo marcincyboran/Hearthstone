@@ -6,19 +6,18 @@ class ContentCtrl {
         this.view = new CardListView();
     }
 
-
-    setCardListener(wrapperCallback){
-        const cardId = event.target.closest('article[data=cardId]').dataset.cardId;
-        this.cardId.addEventListener('click', wrapperCallback)
-            
-        console.log(cardId);
-    
+    setCardListener(wrapperCallback){ 
+        this.view.el.content.addEventListener('click', wrapperCallback)      
     }
 
-    
+    moveClickedCard(ev) {
+        const card = ev.target.closest('article') // .dataset.cardId;
+        console.log(card);
+    }
 
-
-
+    init(contentHandler) {
+        this.setCardListener(contentHandler);
+    }
 }
 
 

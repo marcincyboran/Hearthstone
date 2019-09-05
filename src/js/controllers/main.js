@@ -1,5 +1,4 @@
 import BaseView from '../views/view';
-
 import MenuCtrl from './menuCtrl';
 import CardListCtrl from './cardListCtrl';
 import SingleCardCtrl from './singleCardCtrl';
@@ -49,6 +48,13 @@ class MainCtrl {
         this.filterCtrl.loadCards();
     }
 
+    contentHandler(ev) {
+        ev.preventDefault();
+
+        // tutaj wywołanie funkcji
+        this.contentCtrl.moveClickedCard(ev)
+    }
+
 
     init() {
         console.log('Main init.');
@@ -57,10 +63,12 @@ class MainCtrl {
             this.menuFormSearchHandler.bind(this),
             this.filterHandler.bind(this)
         );
+        
+        this.contentCtrl.init(
+            this.contentHandler.bind(this)
+        );
 
-        this.cardListCtrl.loadAllCard();
-
-        this.ContentCtrl.setCardListener();
+   this.cardListCtrl.loadAllCard();
 
     }
 }
