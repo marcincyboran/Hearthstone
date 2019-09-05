@@ -60,7 +60,7 @@ class MainCtrl {
 
         this.cardListCtrl.loadAllCard();
 
-        this.ContentCtrl.setCardListener();
+        this.ContentCtrl.setCardListener(loadCard());
 
     }
 }
