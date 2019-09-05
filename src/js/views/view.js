@@ -3,7 +3,7 @@ class View {
         this.el = {
             headerNav: document.querySelector('.header__nav'),
             headerForm: document.querySelector('.header__form'),
-
+            switcher: '',
             filterForm: document.querySelector('.filters'),
 
             mainList: document.querySelector('.main-list'),
