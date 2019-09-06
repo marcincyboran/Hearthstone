@@ -47,6 +47,7 @@ class MainCtrl {
 
     updateFiltersHandler(ev) {
         ev.preventDefault();
+
         const filterObj = this.filterCtrl.getFilterObject();
         const queryType = filterObj.dynamic.type;
         const queryValue = filterObj.dynamic.value;
@@ -82,8 +83,6 @@ class MainCtrl {
 
     contentHandler(ev) {
         ev.preventDefault();
-
-        // tutaj wywołanie funkcji
         this.contentCtrl.moveClickedCard(ev)
     }
 
@@ -95,6 +94,10 @@ class MainCtrl {
             this.menuNavClickHandler.bind(this),
             this.menuFormSearchHandler.bind(this),
         );
+
+        this.filterCtrl.init(
+            this.updateFiltersHandler.bind(this)
+        )
         
         this.contentCtrl.init(
             this.contentHandler.bind(this)
