@@ -11,11 +11,29 @@
         flex: 0 1 23%;
         margin: 1%;
         background-color: var(--color-white);
-        padding: 1rem 6rem 1rem 2rem;
-        font-size: 1.7rem;
 
+        position: relative;
+
+
+        &::before {
+            content: attr(data-name);
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            transform: translateY(-50%);
+            display: block;
+            background-color: var(--color-white);
+            text-transform: uppercase;
+        }
+    }
+
+    &__select {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1.7rem;
         @include baseBorder;
     }
+
 }
 
 button {

@@ -33,7 +33,7 @@ class SingleCardCtrl {
         if (card.error === 404) {
             this.view.render(
                 this.view.el.switcher,
-                `<p class="card__title">${card.message}</p>`
+                `<p class="card__error">${card.message}</p>`
             );
         } else {
             this.view.render(
