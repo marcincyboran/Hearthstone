@@ -4,7 +4,7 @@ import IdCardModel from '../models/idCardModel';
 class ContentCtrl {
     constructor(){
         this.view = new CardListView();
-        this.model = new IdCardModel(name);
+        
     }
 
     setCardListener(wrapperCallback){ 
@@ -22,15 +22,15 @@ class ContentCtrl {
         // );
 
         const cardId = ev.target.closest('article[data-cardid]').dataset.cardid;
+        this.model = new IdCardModel(cardId);
         console.log(cardId);
 
-        // ??
-        // const card = await this.model.getIdCard();
+        const card = await this.model.getIdCard();
 
-        // this.view.render(
-        //     this.view.el.cardWrapper,
-        //     this.view.getCardMarkup(card[0])
-        // );
+        this.view.render(
+            this.view.el.cardWrapper,
+            this.view.getCardMarkup(card[0])
+        );
 
         console.log(card);
         
