@@ -1,11 +1,10 @@
 import BaseView from '../views/view';
-
 import MenuCtrl from './menuCtrl';
 import CardListCtrl from './cardListCtrl';
 import SingleCardCtrl from './singleCardCtrl';
 import BackCtrl from './backsCtrl';
 import FilterCtrl from './filterCtrl';
-
+import ContentCtrl from './contentCtrl';
 
 class MainCtrl {
     constructor() {
@@ -13,6 +12,7 @@ class MainCtrl {
         this.menuCtrl = new MenuCtrl();
         this.cardListCtrl = new CardListCtrl();
         this.backCtrl = new BackCtrl();
+        this.contentCtrl = new ContentCtrl();
     }
 
     menuNavClickHandler(ev) {
@@ -48,6 +48,14 @@ class MainCtrl {
         this.filterCtrl.loadCards();
     }
 
+    contentHandler(ev) {
+        ev.preventDefault();
+
+        // tutaj wywołanie funkcji
+        this.contentCtrl.moveClickedCard(ev)
+    }
+
+
     init() {
         console.log('Main init.');
         this.menuCtrl.init(
@@ -55,8 +63,13 @@ class MainCtrl {
             this.menuFormSearchHandler.bind(this),
             this.filterHandler.bind(this)
         );
+        
+        this.contentCtrl.init(
+            this.contentHandler.bind(this)
+        );
 
-        this.cardListCtrl.loadAllCard();
+   this.cardListCtrl.loadAllCard();
+
     }
 }
 
