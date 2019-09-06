@@ -12,22 +12,26 @@ class MainCtrl {
         this.menuCtrl = new MenuCtrl();
         this.cardListCtrl = new CardListCtrl();
         this.backCtrl = new BackCtrl();
+        this.filterCtrl = new FilterCtrl();
         this.contentCtrl = new ContentCtrl();
+
     }
 
     menuNavClickHandler(ev) {
         ev.preventDefault();
         
         switch(ev.target.hash) {
+            case('#info') :
+                console.log(ev.target.hash);
+            break;
 
             case('#backs') :
                 this.backCtrl.loadBacks();
             break;
 
-            case('#info') :
-                console.log(ev.target.hash);
-                // Miejsce na kod Oli :)
-            break;
+            default: 
+                // Slice pozbywa się # z początku
+                this.filterCtrl.updateFiltersView((ev.target.hash).slice(1));
         }
     }
 
@@ -41,11 +45,39 @@ class MainCtrl {
         this.menuCtrl.clearForm();
     }
 
-    filterHandler(ev) {
+    updateFiltersHandler(ev) {
         ev.preventDefault();
+        const filterObj = this.filterCtrl.getFilterObject();
+        const queryType = filterObj.dynamic.type;
+        const queryValue = filterObj.dynamic.value;
 
-        this.filterCtrl = new FilterCtrl(ev.target);
-        this.filterCtrl.loadCards();
+        switch(queryType) {
+            case('types') :
+                this.cardListCtrl.byTypeModel.setOptions(filterObj.optionals)
+                this.cardListCtrl.loadCardsByType(queryValue);
+            break;
+
+            case('sets') :
+                this.cardListCtrl.bySetModel.setOptions(filterObj.optionals)
+                this.cardListCtrl.loadCardsBySet(queryValue);
+            break;
+
+            case('races') :
+                this.cardListCtrl.byRaceModel.setOptions(filterObj.optionals)
+                this.cardListCtrl.loadCardsByRace(queryValue);
+            break;
+
+            case('classes') :
+                this.cardListCtrl.byClassModel.setOptions(filterObj.optionals)
+                this.cardListCtrl.loadCardsByClass(queryValue);
+            break;
+
+            default: 
+                this.cardListCtrl.allCardsModel.setOptions(filterObj.optionals)
+                this.cardListCtrl.loadAllCard();
+        }
+
+        console.log(filterObj);
     }
 
     contentHandler(ev) {
@@ -58,18 +90,17 @@ class MainCtrl {
 
     init() {
         console.log('Main init.');
+
         this.menuCtrl.init(
             this.menuNavClickHandler.bind(this),
             this.menuFormSearchHandler.bind(this),
-            this.filterHandler.bind(this)
         );
         
         this.contentCtrl.init(
             this.contentHandler.bind(this)
         );
 
-   this.cardListCtrl.loadAllCard();
-
+        // this.cardListCtrl.loadAllCard();
     }
 }
 

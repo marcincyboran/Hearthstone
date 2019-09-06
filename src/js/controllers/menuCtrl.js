@@ -1,8 +1,10 @@
 import BaseView from '../views/view';
+import MenuModel from '../models/filterModel';
 
 class MenuCtrl {
     constructor() {
         this.view = new BaseView();
+        this.model = new MenuModel();
     }
 
     clearForm() {
@@ -10,18 +12,17 @@ class MenuCtrl {
         input.value = '';
     }
 
-    setFormListener(headerCallback, filterCallback) {
+    setFormListener(headerCallback) {
         this.view.el.headerForm.addEventListener('submit', headerCallback);
-        this.view.el.filterForm.addEventListener('submit', filterCallback);
     }
 
     setMenuListener(callback) {
         this.view.el.headerNav.addEventListener('click', callback);
     }
 
-    init(navHandler, searchHandler, filterHandler) {
+    init(navHandler, searchHandler) {
         this.setMenuListener(navHandler);
-        this.setFormListener(searchHandler, filterHandler);
+        this.setFormListener(searchHandler);
     }
 }
 

@@ -48,7 +48,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         include: [path.resolve(__dirname, 'src/assets')],
         use: [
           {

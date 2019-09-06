@@ -21,9 +21,9 @@ class AllCardsModel extends Model {
             });
             
             const dataObj = await rawData.json();
-            const cards = this.cardsObjectToSingleArray(dataObj);
+            this.cards = this.cardsObjectToSingleArray(dataObj);
             
-            return cards;
+            return this.cards;
             
         } catch (error) {
             return new Error(`Wild ERROR occured, can't get cards list. Details: ${error}`)

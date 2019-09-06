@@ -11,6 +11,10 @@ class BasicModel {
     getParams() {
         let params = '?';
         for (let option in this.options) {
+
+            // Omijamy opcje ustawione na off :)           
+            if (this.options[option] === 'off') continue;
+
             params += `${option}=${this.options[option]}&`
         }
         // Usuwamy & z końca
@@ -20,6 +24,10 @@ class BasicModel {
     getFullUrl() {
         const gotParams = Object.entries(this.options).length !== 0;
         return `${this.baseApiUrl}${this.endpoint}${(gotParams) ? this.getParams() : '' }`;
+    }
+
+    setOptions(paramsObj) {
+        this.options = paramsObj;
     }
 }
 
