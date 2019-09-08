@@ -3,6 +3,7 @@
     flex: 1;
     margin-bottom: var(--margin);
 
+    @include topBorder;
     @include basicSection;
 }
 
@@ -16,6 +17,7 @@
     margin-right: var(--margin-medium);
     overflow-x: auto;
     
+    @include topBorder;
     @include basicSection;
 }
 
@@ -23,6 +25,9 @@
     position: relative;
     flex: 0 1 30%;
     margin-left: var(--margin-medium);
+    min-height: 40rem;
+    height: 100%;
 
+    border: 0.5px solid var(--color-primary-light);
     @include basicSection;
 }

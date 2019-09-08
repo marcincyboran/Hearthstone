@@ -18,12 +18,20 @@
         font-size: 3rem;
         font-weight: 300;
         line-height: 1;
+        height: var(--header-height);
         color: var(--color-secondary);
 
         display: flex;
         justify-content: center;
         align-items: center;
         margin-right: auto;
+        padding-left: var(--padding-big);
+    }
+
+    &__img{
+        max-width: 20rem;
+        height: auto;
+        object-fit: contain;
     }
 
     &__nav {
@@ -109,20 +117,21 @@
 
     &__form-submit {
         font-size: 1.2rem;
-        font-weight: 600;
         letter-spacing: .2px;
         text-transform: uppercase;
 
-        color: var(--color-gray-4);
         display: block;
         padding: .8rem 1.6rem;
         border: none;
-        background-color: var(--color-primary-light);
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
 
+        @include button;
         @include baseBorder;
         border-left: none;
+    }
+    &__form-submit:hover{
+        background-color: var(--color-primary);
     }
 
 

@@ -29,7 +29,7 @@ class ContentCtrl {
 
         this.view.render(
             this.view.el.cardWrapper,
-            this.view.getCardMarkup(card[0])
+            this.view.getCardMore(card[0])
         );
 
         console.log(card);

@@ -40,12 +40,17 @@ button {
     font-size: 1.6rem;
     line-height: 1;
     margin: 1% 1% 1% auto;
-    padding: 1rem 3rem;
+    padding: 1rem 9%;
+    letter-spacing: 0.14em;
+    border-radius: 1rem;
+    
+
+    @include button;
+    @include baseBorder;
 }
 
-// .subbut {
-//     flex: 0 1 90%;
-//     text-align: end;
-//     margin: 2rem;
-// }
+button:hover{
+    background-color: var(--color-primary);
+}
+
 
