@@ -5,6 +5,12 @@
         flex-wrap: wrap;
         padding: var(--padding-small);
         margin-bottom: var(--margin-medium);
+
+
+        @media screen and (max-width: 28.125em) {
+            flex-direction: column;
+        }
+
     }
 
     &__box {
