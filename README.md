@@ -1,6 +1,7 @@
 ## Project 3 - Hearthstone (CodersCrew)
 
 GitHub Pages [live version](https://marcincyboran.github.io/hearthstone/)
+
 Images are not loaded due to GitHub policy....
 
 ### How to run
