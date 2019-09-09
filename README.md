@@ -1,6 +1,6 @@
 ## Project 3 - Hearthstone (CodersCrew)
 
-GitHub Pages [live version](https://marcincyboran.github.io/hearthstone/)
+GitHub Pages [live version](https://marcincyboran.github.io/Hearthstone/)
 
 ### How to run
 

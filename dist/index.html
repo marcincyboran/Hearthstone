@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="plPL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap&subset=latin-ext"
+        rel="stylesheet">
+    <title>Hearthstone Card App</title>
+<link href="style/app.css" rel="stylesheet"></head>
+
+<body>
+
+    <header class="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <img class="header__img" src="assets/logo.png">
+            </div>
+            <nav class="header__nav">
+                <li class="header__nav-item">
+                    <a href="#cards" class="header__nav-link">
+                        Cards <span class="header__chevron">&#9660;</span>
+                    </a>
+                    <ul class="header__subNav-list">
+                        <li class="header__subNav-item">
+                            <a href="#sets" class="header__subNav-link">
+                                By Sets
+                            </a>
+                        </li>
+                        <li class="header__subNav-item">
+                            <a href="#races" class="header__subNav-link">
+                                By Races
+                            </a>
+                        </li>
+                        <li class="header__subNav-item">
+                            <a href="#classes" class="header__subNav-link">
+                                By Classes
+                            </a>
+                        </li>
+                        <li class="header__subNav-item">
+                            <a href="#types" class="header__subNav-link">
+                                By Types
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__nav-item">
+                    <a href="#backs" class="header__nav-link">
+                        Backs
+                    </a>
+                </li>
+            </nav>
+            <form class="header__form">
+                <input type="text" class="header__form-input">
+                <input type="submit" class="header__form-submit" value="Search">
+            </form>
+        </div>
+    </header>
+
+    <main class="container wrapper">
+
+        <form class="filters">
+            <div class="filters__container">
+
+                <div class="filters__box" data-name="Select from menu">
+                    <select class="filters__select" name="dynamic">
+                        <option value="off">---</option>
+                    </select>
+                </div>
+
+                <div class="filters__box" data-name="health">
+                    <select class="filters__select" name="health">
+                        <option value="off">Off</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="more">more</option>
+                    </select>
+                </div>
+
+                <div class="filters__box" data-name="attack">
+                    <select class="filters__select" name="attack">
+                        <option value="off">Off</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="more">more</option>
+                    </select>
+                </div>
+
+                <div class="filters__box" data-name="cost">
+                    <select class="filters__select" name="cost">
+                        <option value="off">Off</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="more">more</option>
+                    </select>
+                </div>
+
+
+                <button type="submit">FILTER</button>
+
+            </div>
+        </form>
+
+        <section class="main-container">
+
+            <section class="content">
+
+            </section>
+
+            <section class="card-wrapper">
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <!-- <aside class="deck">
+        <ul class="deck__list">
+            <li class="deck__item">Deck 1</li>
+            <li class="deck__item">Deck 2</li>
+            <li class="deck__item">Deck 3</li>
+            <li class="deck__item">Deck 4</li>
+            <li class="deck__item red mb">Deck 5</li>
+        </ul>
+    </aside> -->
+
+    <footer class="footer">
+        <div class="container footer__container">
+            <ul class="footer__list">
+                <li class="footer__item">
+                    Aleksandra Przytuła
+                </li>
+                <li class="footer__item">
+                    Grzegorz Witczak
+                </li>
+                <li class="footer__item">
+                    Marcin Cyboran
+                </li>
+                <li class="footer__item footer__item--last">
+                    CodersCrew
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+<script type="text/javascript" src="js/polyfills.bundle.js"></script><script type="text/javascript" src="js/app.bundle.js"></script></body>
+
+</html>
