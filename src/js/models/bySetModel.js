@@ -8,7 +8,7 @@ class BySetModel extends Model {
 
     async getCards(query) {
         this.endpoint = `${this.endpointBlueprint}${query}`;
-        
+
         try {
             const rawData = await fetch(this.getFullUrl(), {
                 'headers': {...this.headers}

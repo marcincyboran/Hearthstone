@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --watch --open"
+    "start": "webpack-dev-server --mode development --watch --open",
+    "deploy": "git subtree push --prefix build origin gh-pages"
   },
   "author": "",
   "license": "ISC",
