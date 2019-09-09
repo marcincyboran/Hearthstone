@@ -7,6 +7,10 @@
 
     @include baseBorder;
 
+    @media screen and (max-width: 46.875em) {
+        flex: 0 1 46%;
+    }
+
     &:hover {
         background-color: var(--color-gray-1);
         cursor: pointer;
@@ -38,6 +42,10 @@
         margin-bottom: 1rem;
         position: relative;
         perspective: 1000px;
+
+        @media screen and (max-width: 46.875em) {
+            margin-top: -1rem;
+        }
     }
 
     &__image,

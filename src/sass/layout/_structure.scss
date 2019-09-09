@@ -8,10 +8,27 @@
     padding-top: calc((var(--margin) * 2) + var(--header-height));
     padding-bottom: var(--padding-big);
     min-height: calc(100vh - var(--header-height));
+
+    @media screen and (max-width: 46.875em) {
+        padding-top: calc((var(--margin) * 2) + var(--header-narrow-height));
+        min-height: calc(100vh - var(--header-narrow-height));
+    }
+
+    @media screen and (max-width: 25em) {
+        padding-top: calc((var(--margin) * 2) + var(--header-narrow-height) - 7rem);
+        min-height: calc(100vh - var(--header-narrow-height) + 7rem);
+    }
 }
 
 .main-container {
     display: flex;
     height: 86vh;
     overflow: hidden;
+
+    @media screen and (max-width: 28.125em) {
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        height: auto;
+    }
 }
